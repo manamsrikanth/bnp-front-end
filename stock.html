@@ -35,17 +35,15 @@
             align-items: center;
             justify-content: center;
             padding: 60px 30px 30px 30px;
-            /* top padding increased to move downward */
             color: white;
         }
 
         header .logo {
             position: absolute;
             left: 20px;
-            top: -15%;
-            transform: translateY(50%);
+            top: 5;
             height: 100px;
-            /* increased logo size */
+            /* Logo size */
             width: auto;
         }
 
@@ -66,10 +64,13 @@
             width: 95%;
             max-width: 600px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.3);
+            /* semi-transparent */
             padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            /* blur effect */
         }
 
         select {
@@ -114,7 +115,7 @@
 <body>
 
     <header>
-        <img src="bnp logo.png" alt="Company Logo" class="logo"> <!-- Replace with your logo -->
+        <img src="bnp logo.png" alt="Company Logo" class="logo">
         <h1>Next Gen Market Evaluation</h1>
     </header>
 
