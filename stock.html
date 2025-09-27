@@ -4,40 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Dashboard</title>
+    <title>Next Gen Market Evaluation</title>
     <style>
-        html,
-        body {
-            height: 100%;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
         }
 
         body {
             background-image: url('stock.png');
+            /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            position: relative;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            padding: 60px 30px 30px 30px;
+            /* top padding increased to move downward */
+            color: white;
+        }
+
+        header .logo {
+            position: absolute;
+            left: 20px;
+            top: -15%;
+            transform: translateY(50%);
+            height: 100px;
+            /* increased logo size */
+            width: auto;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            text-align: center;
         }
 
         .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .dashboard {
             width: 95%;
             max-width: 600px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.15);
-            /* more transparent */
-            backdrop-filter: blur(12px);
-            /* blur for glass effect */
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.85);
             padding: 30px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            border: 1px solid rgb(255, 255, 255);
-            /* subtle border */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
         }
 
         select {
@@ -45,20 +77,13 @@
             font-size: 1rem;
             margin-bottom: 20px;
             border-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.3);
-            color: #2c3e50;
-        }
-
-        select option {
-            background: #e0e0e0;
-            color: #2c3e50;
+            border: 1px solid #2c3e50;
         }
 
         .evaluate-btn {
             padding: 10px 20px;
             font-size: 1rem;
-            background-color: rgba(41, 128, 185, 0.85);
+            background-color: #2980b9;
             color: white;
             border: none;
             border-radius: 5px;
@@ -67,46 +92,54 @@
         }
 
         .evaluate-btn:hover {
-            background-color: rgba(52, 152, 219, 0.95);
+            background-color: #3498db;
             transform: scale(1.05);
-        }
-
-        h1 {
-            text-align: center;
-            color: #fff;
-            /* white to contrast with bg */
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
         }
 
         #status {
             margin-bottom: 20px;
             font-size: 1.2rem;
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            color: #2c3e50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            color: white;
+            font-size: 1.3rem;
         }
     </style>
 </head>
 
 <body>
 
+    <header>
+        <img src="bnp logo.png" alt="Company Logo" class="logo"> <!-- Replace with your logo -->
+        <h1>Next Gen Market Evaluation</h1>
+    </header>
+
     <div class="container">
-        <h1>Stock Dashboard</h1>
-        <label for="stock-select" style="color: #ffffff;">Select Stock ID:</label><br>
-        <select id="stock-select" size="1">
-            <option value="" disabled selected>-- Select Stock --</option>
-            <script>
-                for (let i = 1; i <= 100; i++) {
-                    const id = 'STK' + i.toString().padStart(3, '0');
-                    document.write(`<option value="${id}">${id}</option>`);
-                }
-            </script>
-        </select>
+        <div class="dashboard">
+            <label for="stock-select">Select Stock ID:</label><br>
+            <select id="stock-select" size="1">
+                <option value="" disabled selected>-- Select Stock --</option>
+                <script>
+                    for (let i = 1; i <= 100; i++) {
+                        const id = 'STK' + i.toString().padStart(3, '0');
+                        document.write(`<option value="${id}">${id}</option>`);
+                    }
+                </script>
+            </select>
 
-        <div id="status">Analysis Status: <span id="analysis-status">Unevaluated</span></div>
+            <div id="status">Analysis Status: <span id="analysis-status">Unevaluated</span></div>
 
-        <button class="evaluate-btn" onclick="evaluateStock()">Evaluate</button>
+            <button class="evaluate-btn" onclick="evaluateStock()">Evaluate</button>
+        </div>
     </div>
+
+    <footer>
+        &copy; 2025 Next Gen Market Evaluation. All rights reserved.
+    </footer>
 
     <script>
         function evaluateStock() {
