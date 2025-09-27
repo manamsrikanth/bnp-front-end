@@ -15,7 +15,7 @@
         }
 
         body {
-            background-image: url('stockanalyzer.png');
+            background-image: url('stock.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -28,10 +28,16 @@
             width: 95%;
             max-width: 600px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.15);
+            /* more transparent */
+            backdrop-filter: blur(12px);
+            /* blur for glass effect */
+            -webkit-backdrop-filter: blur(12px);
             padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgb(255, 255, 255);
+            /* subtle border */
         }
 
         select {
@@ -39,20 +45,20 @@
             font-size: 1rem;
             margin-bottom: 20px;
             border-radius: 5px;
-            border: 1px solid #2c3e50;
-            /* force dropdown to open below */
-            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
+            color: #2c3e50;
         }
 
         select option {
-            background: #fff;
+            background: #e0e0e0;
             color: #2c3e50;
         }
 
         .evaluate-btn {
             padding: 10px 20px;
             font-size: 1rem;
-            background-color: #2980b9;
+            background-color: rgba(41, 128, 185, 0.85);
             color: white;
             border: none;
             border-radius: 5px;
@@ -61,20 +67,23 @@
         }
 
         .evaluate-btn:hover {
-            background-color: #3498db;
+            background-color: rgba(52, 152, 219, 0.95);
             transform: scale(1.05);
         }
 
         h1 {
             text-align: center;
-            color: #2c3e50;
+            color: #fff;
+            /* white to contrast with bg */
             margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
         }
 
         #status {
             margin-bottom: 20px;
             font-size: 1.2rem;
-            color: #2c3e50;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -83,7 +92,7 @@
 
     <div class="container">
         <h1>Stock Dashboard</h1>
-        <label for="stock-select">Select Stock ID:</label><br>
+        <label for="stock-select" style="color: #ffffff;">Select Stock ID:</label><br>
         <select id="stock-select" size="1">
             <option value="" disabled selected>-- Select Stock --</option>
             <script>
