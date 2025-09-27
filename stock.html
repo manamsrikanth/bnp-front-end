@@ -6,28 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Dashboard</title>
     <style>
+        html,
         body {
-            font-family: Arial, sans-serif;
+            height: 100%;
             margin: 0;
             padding: 0;
-            /* Full-page background image */
-            background-image: url('stock.png');
-            /* Replace with your image URL */
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('stockanalyzer.png');
             background-size: cover;
-            /* Cover entire page */
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            /* Stay fixed when scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
             width: 95%;
             max-width: 600px;
-            margin: 80px auto;
             text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            /* Semi-transparent to see background */
+            background: rgba(255, 255, 255, 0.85);
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
@@ -57,24 +58,6 @@
             transform: scale(1.05);
         }
 
-        .portfolio-btn {
-            padding: 20px 60px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 30px;
-        }
-
-        .portfolio-btn:hover {
-            background-color: #c0392b;
-            transform: scale(1.1);
-        }
-
         h1 {
             text-align: center;
             color: #2c3e50;
@@ -91,9 +74,8 @@
 
 <body>
 
-    <h1>Stock Dashboard</h1>
-
     <div class="container">
+        <h1>Stock Dashboard</h1>
         <label for="stock-select">Select Stock ID:</label><br>
         <select id="stock-select">
             <option value="" disabled selected>-- Select Stock --</option>
@@ -108,26 +90,17 @@
         <div id="status">Analysis Status: <span id="analysis-status">Unevaluated</span></div>
 
         <button class="evaluate-btn" onclick="evaluateStock()">Evaluate</button>
-
-        <div>
-            <button class="portfolio-btn" onclick="portfolioAnalyzer()">Portfolio Analyzer</button>
-        </div>
     </div>
 
     <script>
         function evaluateStock() {
             const select = document.getElementById('stock-select');
-            const status = document.getElementById('analysis-status');
             if (!select.value) {
-                alert('Please select a stock first!');
+                alert('Please select a stockid first!');
                 return;
             }
-            status.textContent = 'Evaluated';
-            alert(`${select.value} has been evaluated!`);
-        }
-
-        function portfolioAnalyzer() {
-            alert('Portfolio Analyzer clicked!');
+            const stockId = select.value;
+            window.location.href = `evaluate.html?stock=${stockId}`;
         }
     </script>
 

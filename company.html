@@ -16,11 +16,41 @@
         body {
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            /* Center horizontally */
             align-items: center;
-            /* Center vertically */
             background: url("stock.png") no-repeat center center/cover;
+            position: relative;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 60px;
+        }
+
+        .header img {
+            height: 100px;
+            width: auto;
+            position: absolute;
+            left: 20px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
         }
 
         .btn {
@@ -35,19 +65,40 @@
             transition: 0.3s;
             box-shadow: 0 4px 10px rgba(254, 254, 254, 0.3);
             text-decoration: none;
+            text-align: center;
         }
 
         .btn:hover {
             background: rgba(52, 152, 219, 0.9);
             transform: scale(1.05);
         }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
     </style>
 </head>
 
 <body>
-    <!-- Option 1: Using a link -->
-    <a href="stock.html" class="btn">Stocks</a>
+    <div class="header">
+        <img src="bnp logo.png" alt="Logo">
+        <h1>Next Gen Market Evaluation</h1>
+    </div>
 
+    <div class="buttons">
+        <a href="stock.html" class="btn">Stocks</a>
+        <a href="portfolio.html" class="btn">Portfolio Analyzer</a>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Next Gen Market Evaluation. All rights reserved.
+    </div>
 </body>
 
 </html>
