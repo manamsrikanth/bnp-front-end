@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 20px auto;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #2c3e50;
+            /* Added border to cells */
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .evaluate-btn {
+            padding: 8px 15px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .evaluate-btn:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+
+        .portfolio-btn {
+            padding: 20px 60px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 30px;
+        }
+
+        .portfolio-btn:hover {
+            background-color: #c0392b;
+            transform: scale(1.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Stock Dashboard</h1>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock Id</th>
+                    <th>Analysis Status</th>
+                    <th>Evaluate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example rows -->
+                <tr>
+                    <td>STK001</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK002</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK003</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                
+                <tr>
+                    <td>STK004</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK005</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                
+                <tr>
+                    <td>STK006</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK007</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK008</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK009</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK010</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK011</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK012</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK013</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK014</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK015</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK016</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK017</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK018</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK019</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK020</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK021</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK022</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK023</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK024</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK025</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK026</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK027</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK028</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK029</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK030</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK031</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK032</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK033</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK034</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK035</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK036</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK037</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK038</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK039</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK040</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK041</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK042</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK043</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK044</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK045</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK046</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK047</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK048</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK049</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK050</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK051</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK052</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK053</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK054</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK055</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK056</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK057</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK058</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK059</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK060</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK061</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+                <tr>
+                    <td>STK062</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK063</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK064</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK065</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK066</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK067</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK068</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK069</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK070</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK071</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK072</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK073</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK074</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK075</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK076</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK077</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK078</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK079</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK080</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK081</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK082</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK083</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK084</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK085</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK086</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK087</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK088</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK089</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK090</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK091</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK092</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK093</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK094</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK095</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK096</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK097</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK098</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK099</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr><tr>
+                    <td>STK100</td>
+                    <td>Unevaluated</td>
+                    <td><button class="evaluate-btn">Evaluate</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                
+            </tfoot>
+        </table>
+        
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="portfolio-btn">Portfolio Analyzer</button>
+    </div>
+
+</body>
+
+</html>
